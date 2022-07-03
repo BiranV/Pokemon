@@ -1,5 +1,11 @@
 <template>
   <v-container>
+    <v-icon v-if="!expand" class="ml-2" @click="expand_results"
+      >mdi-magnify-expand</v-icon
+    >
+    <v-icon v-if="expand" class="ml-2" @click="compress_results"
+      >mdi-arrow-collapse-vertical</v-icon
+    >
     <v-row justify="center">
       <div
         class="div-item pt-4"
@@ -68,7 +74,7 @@ import PokemonCard from "./PokemonCard.vue";
 import axios from "axios";
 export default {
   name: "PokeminList",
-  props: ["category", "url", "expand"],
+  props: ["category", "url"],
   components: { PokemonCard },
 
   data() {
@@ -80,6 +86,7 @@ export default {
       pokemon_abilities: [],
       snackbar: false,
       flag: 0,
+      expand: false,
     };
   },
   async created() {
@@ -109,6 +116,12 @@ export default {
     add_to_cart() {
       this.form_abilities = false;
       this.snackbar = true;
+    },
+    expand_results() {
+      this.expand = true;
+    },
+    compress_results() {
+      this.expand = false;
     },
   },
 };

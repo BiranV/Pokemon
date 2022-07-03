@@ -8,20 +8,10 @@
     >
       <v-card-title>
         {{ category.name.toUpperCase() }}
-        
-        <v-icon v-if="!expand" class="ml-2" @click="expand_results"
-          >mdi-magnify-expand</v-icon
-        >
-        <v-icon v-if="expand" class="ml-2" @click="compress_results"
-          >mdi-arrow-collapse-vertical</v-icon
-        >
       </v-card-title>
 
       <v-divider></v-divider>
-      <PokemonList
-        :category="category.name"
-        :url="category.url"
-        :expand="expand"
+      <PokemonList :category="category.name" :url="category.url"
     /></v-card>
   </v-container>
 </template>
@@ -34,17 +24,8 @@ export default {
   components: { PokemonList },
 
   data() {
-    return {
-      expand: false,
-    };
+    return {};
   },
-  methods: {
-    expand_results() {
-      this.expand = true;
-    },
-    compress_results() {
-      this.expand = false;
-    },
-  },
+  methods: {},
 };
 </script>
