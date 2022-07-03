@@ -43,9 +43,6 @@ export default {
     capitalize(s) {
       return s && s[0].toUpperCase() + s.slice(1);
     },
-    add_item(item) {
-      this.snackbar = true;
-    },
     show_abilities() {
       this.$emit("abilities", this.abilities);
       this.$emit("pokemon_name", this.capitalize(this.name));

@@ -85,7 +85,6 @@ export default {
       name: "",
       pokemon_abilities: [],
       snackbar: false,
-      flag: 0,
       expand: false,
     };
   },
@@ -116,6 +115,7 @@ export default {
     add_to_cart() {
       this.form_abilities = false;
       this.snackbar = true;
+      this.$emit("cart_counter");
     },
     expand_results() {
       this.expand = true;
