@@ -4,7 +4,7 @@
       class="borderco"
       :show-arrows="false"
       height="400px"
-      :cycle="false"
+      :cycle="true"
       interval="7000"
     >
       <v-carousel-item
