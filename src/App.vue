@@ -1,32 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <v-app-bar app color="#80D8FF">
+      <div class="d-flex align-center">
+        <a href="/"
+          ><v-img
+            alt="Pokemon Logo"
+            link="/home"
+            src="./assets/logo.png"
+            width="100px"
+        /></a>
+      </div>
+      <v-btn to="about" class="ml-4" text>
+        <span class="mr-2">About us</span>
+      </v-btn>
+      <v-btn to="contact" text>
+        <span class="mr-2">Contact us</span>
+      </v-btn>
+      <v-spacer></v-spacer>
+
+      <v-btn to="login" text>
+        <span class="mr-2">Login</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+  name: "App",
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
+<style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  background-color: rgb(225, 225, 225);
 }
 </style>
