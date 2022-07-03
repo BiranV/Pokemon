@@ -5,7 +5,7 @@
     </div>
     <div class="div-info">
       <p class="pokemon-name">{{ capitalize(name) }}</p>
-      <p class="pokemon-details">another details...</p>
+      <p class="pokemon-details">Choose me!</p>
     </div>
     <div class="div-icon">
       <v-icon
@@ -68,7 +68,6 @@ export default {
   vertical-align: top;
 }
 .pokemon-name {
-  display: inline-block;
   vertical-align: top;
   font-weight: bold;
 }
